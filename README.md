@@ -11,6 +11,7 @@
 - skapa ny repo:
 
 > github: create repository
+
 > git clone http....
 
 (Inte tvärtom, inte skapa katalogen först, jag kan inte ha en katalog med samma namn redan :P )
