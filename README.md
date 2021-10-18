@@ -6,4 +6,15 @@
 
 # 2021-10-18
 
+- skapa ny repo:
 
+> github: create repository
+> git clone http....
+
+(Inte tvärtom, inte skapa katalogen först, jag kan inte ha en katalog med samma namn redan :P)
+
+- skapa ny pip-environment
+
+> pipenv shell
+
+- installera paketen där i
