@@ -35,5 +35,9 @@ Ytterligare ett sätt att jobba med serier. En dataframe är som en mångdimensi
 
 Kokchun: "När man tänker att man ska loopa [igenom en dataframe], då ska man tänka om."
 
+- Seaborn
+
+Inte en del av pandas. Ett praktiskt verktyg för att snabbt plotta data från dataframes och lite mer avancerade figurer än vad matplotlib gör som default (utan att ha femtioelva rader kod). Är kompatibelt med matplotlib (bygger på det?) men innehåller färdiga metoder för att göra t.ex. barplots, pie charts och annat, samt skriva ut vad som står på axlarnarna från key values från dataframes.
+
 #```py
 #```
