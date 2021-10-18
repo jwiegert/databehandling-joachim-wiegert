@@ -25,8 +25,13 @@
 
 ### Pandas Intro
 
+- Pandas Series:
 
+snabbare än listor odyl...
 
+- Pandas DataFrame:
+
+"När man tänker att man ska loopa igenom en dataframe, då ska man tänka om."
 
 #```py
 #```
