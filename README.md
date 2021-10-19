@@ -4,7 +4,7 @@
 - Kursen börjar 2021-10-18.
 - Arbetsförmedlingen kommer, filmar och intervjuar några.
 
-# 2021-10-18 : lect01 i code along
+# 2021-10-18 : lect01
 
 ### Setup och påminnelser
 
@@ -22,7 +22,19 @@
 
 - installera paketen där i
 
-> pipenv install numpy pandas seaborn matplotlib
+> pipenv install numpy pandas seaborn matplotlib openpyxl ipykernel
+
+ - numpy: vanliga numeriska paketet
+
+ - pandas: datahanteringspaket
+
+ - seaborn: plot-tools
+
+ - matplotlib: plot-paketet
+
+ - openpyxl: öppna excelfiler i python
+
+ - ipykernel: för att köra jupyter notebook
 
 ### Pandas Intro
 
@@ -36,9 +48,28 @@ Ytterligare ett sätt att jobba med serier. En dataframe är som en mångdimensi
 
 Kokchun: "När man tänker att man ska loopa [igenom en dataframe], då ska man tänka om."
 
+Olika arbetssätt vi använt: 
+
+selections, filtering, masking, rename, sort_values
+
+info(), describe(), unique(), head(), tail()
+
+Dessutom, finns flera sätt att skapa DataFrames på. Vi har sett ett par nu. Nyttja dokumentationen!
+
+- Pandas Index object
+
+Vänstra kolumnen i dataframes är ett eget objekt med index, en kolumn med siffror vanligtvis. Inget vi gått igenom.
+
 - Seaborn
 
 Inte en del av pandas. Ett praktiskt verktyg för att snabbt plotta data från dataframes och lite mer avancerade figurer än vad matplotlib gör som default (utan att ha femtioelva rader kod). Är kompatibelt med matplotlib (bygger på det?) men innehåller färdiga metoder för att göra t.ex. barplots, pie charts och annat, samt skriva ut vad som står på axlarnarna från key values från dataframes.
+
+# 2021-10-19 : lect02
+
+### Saknade data och störande felaktiga data
+
+"Shit in gives shit out"
+
 
 #```py
 #```
