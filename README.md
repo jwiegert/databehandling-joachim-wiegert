@@ -4,7 +4,7 @@
 - Kursen börjar 2021-10-18.
 - Arbetsförmedlingen kommer, filmar och intervjuar några.
 
-# 2021-10-18 : lect01
+# 2021-10-18 : lect00
 
 ### Setup och påminnelser
 
@@ -64,11 +64,45 @@ Vänstra kolumnen i dataframes är ett eget objekt med index, en kolumn med siff
 
 Inte en del av pandas. Ett praktiskt verktyg för att snabbt plotta data från dataframes och lite mer avancerade figurer än vad matplotlib gör som default (utan att ha femtioelva rader kod). Är kompatibelt med matplotlib (bygger på det?) men innehåller färdiga metoder för att göra t.ex. barplots, pie charts och annat, samt skriva ut vad som står på axlarnarna från key values från dataframes.
 
-# 2021-10-19 : lect02
+# 2021-10-19 : lect01
 
 ### Saknade data och störande felaktiga data
 
 "Shit in gives shit out"
+
+DataFrame kan hantera alla möjliga sorters listor och array'er, bara att lägga in.
+
+Finns olika sätt som saknade data syns, NaN, Na, Null, etc. Finns olika sätt att hantera detta.
+
+- isnull() : returns True if null
+- notnull() : returns True if number
+- dropna() : drops an axis with nulls, default removes rows (change with axis=).
+- fillna() : fills Null values with certain value.
+
+Går också att ta ut medelvärden och lägga in istället. Hur man gör beror på vad det är för data. Prata med den som kan situationen de kommer ifrån.
+
+* Strategier
+
+Vilken strategi man kör med beror på:
+
+- Data set size: små dataset kan varje värde vara extra viktigt och det går inte att bara drop'a NaN. I stora dataset kan det vara så att de inte spelar nån roll, då kan man ta bort rader/kolumner med Nan. Hanteras varsamt.
+- Viktig info: vissa kolumner/rader kan vara väldigt viktiga och kan inte drop'as.
+- Sakkunskap: du har inte expertis i området data är från. Fråga en expert hur man bör göra.
+
+Saknade data kan signifikant påverka:
+
+- Visualiseringen.
+- Beräkningar.
+- Statistik.
+- Maskininlärningsalgoritmer
+- etc
+
+Byta ut NaN mot annan statistik, går att nyttja en massa inbyggda verktyg.
+
+- .median()
+- .mean()
+- .max()
+- .min()
 
 
 #```py
