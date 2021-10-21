@@ -118,7 +118,7 @@ Wes McKinney är förörigt skaparen av Pandas. 2nd Edition ska vara senast vid 
 
 - Finns både en opensource och en kommersiell variant. Den kommersiella kostar typ 50k$ per år och 5 användare...
 
-
+Gör om ex00 och ex01 men med plotly express istället. Det går rätt enkelt att plotta dem så.
 
 
 
