@@ -104,6 +104,23 @@ Byta ut NaN mot annan statistik, går att nyttja en massa inbyggda verktyg.
 - .max()
 - .min()
 
+# 2021-10-21 : lect02
+
+### Boktips
+
+- Python for Data Analysis - Wes McKinney
+
+Wes McKinney är förörigt skaparen av Pandas. 2nd Edition ska vara senast vid skrivande stund.
+
+### Plotly express
+
+- Utvecklades för forskare (som inte kan java vnaligtvis) för att plotta interaktiva plots.
+
+- Finns både en opensource och en kommersiell variant. Den kommersiella kostar typ 50k$ per år och 5 användare...
+
+
+
+
 
 #```py
 #```
