@@ -114,7 +114,7 @@ Wes McKinney är förörigt skaparen av Pandas. 2nd Edition ska vara senast vid 
 
 ### Plotly express
 
-- Utvecklades för forskare (som inte kan java vnaligtvis) för att plotta interaktiva plots.
+- Utvecklades för forskare (som inte kan java vanligtvis) för att plotta interaktiva plots.
 
 - Finns både en opensource och en kommersiell variant. Den kommersiella kostar typ 50k$ per år och 5 användare...
 
