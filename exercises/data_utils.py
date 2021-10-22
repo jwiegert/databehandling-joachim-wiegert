@@ -15,9 +15,8 @@ def extract_nan_columns(df):
     df_nan = df[df.columns[df.isna().any() == True]]
     # Save number of Nans
     Nnans = df_nan.isna().sum()
-    # Put number of Nans in a dataframe (reset index and remove redundant index column)
-    Nnans = pd.DataFrame(
-        {"Column names":Nnans.index, "Number of NaNs":Nnans}).reset_index(drop=True)
+    # Put number of Nans in a dataframe, index also contains column names
+    Nnans = pd.DataFrame({"Column names":Nnans.index, "Number of NaNs":Nnans})
     # Plot
     sns.barplot(data=Nnans, x="Column names", y="Number of NaNs")
     # Return data
