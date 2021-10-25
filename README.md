@@ -143,6 +143,8 @@ Slår ihop dataframes, antingen som nya rader eller nya kolumner. Nya rader, axi
 - pd.merge
 
 
+"Då kan man få program som är användvänliga och det vore dåligt." (Erik, kursare)
+
 
 
 
