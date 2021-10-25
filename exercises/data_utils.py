@@ -21,3 +21,8 @@ def extract_nan_columns(df):
     sns.barplot(data=Nnans, x="Column names", y="Number of NaNs")
     # Return data
     return df_nan, Nnans
+
+# TODO:
+# - add function for merging dataframes and removing doubled columns
+
+

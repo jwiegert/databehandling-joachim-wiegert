@@ -120,6 +120,23 @@ Wes McKinney är förörigt skaparen av Pandas. 2nd Edition ska vara senast vid 
 
 Gör om ex00 och ex01 men med plotly express istället. Det går rätt enkelt att plotta dem så.
 
+# 2021-10-25 : lect03
+
+### Slå ihop data-set: merge, join, concat, append
+
+Se [https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html]
+
+- pd.concat([dataframe1,dataframe2, ... dataframeN])
+
+Slår ihop dataframes, antingen som nya rader eller nya kolumner. Nya rader, axis=0/"rows" är default. Använder "set logic" med "join="outer"/"inner"", alltså slår ihop alla data (default, outer) i alla dataframes eller bara det som är gemensamt för alla dataframes (inner).
+
+
+
+
+### Parse HTML -> pandas dataframe
+
+
+
 
 
 #```py
