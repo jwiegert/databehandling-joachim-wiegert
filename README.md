@@ -126,9 +126,23 @@ Gör om ex00 och ex01 men med plotly express istället. Det går rätt enkelt at
 
 Se [https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html]
 
+- how/join: inner, right, left, outer
+
+inner: tar bara det som är gemensamt för alla dataframes.
+
+outer: tar allt från alla dataframes och slår ihop.
+
+right: tar allt från "höger" dataframe och det som är gemensamt från båda.
+
+left: tar allt från "vänster" dataframe och det som är gemensamt från båda.
+
 - pd.concat([dataframe1,dataframe2, ... dataframeN])
 
 Slår ihop dataframes, antingen som nya rader eller nya kolumner. Nya rader, axis=0/"rows" är default. Använder "set logic" med "join="outer"/"inner"", alltså slår ihop alla data (default, outer) i alla dataframes eller bara det som är gemensamt för alla dataframes (inner).
+
+- pd.merge
+
+
 
 
 
