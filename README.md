@@ -120,11 +120,13 @@ Wes McKinney är förörigt skaparen av Pandas. 2nd Edition ska vara senast vid 
 
 Gör om ex00 och ex01 men med plotly express istället. Det går rätt enkelt att plotta dem så.
 
+FYI man kan inte göra subplots med plotly-express. För det får man använda seaborn eller matplotlib.
+
 # 2021-10-25 : lect03
 
 ### Slå ihop data-set: merge, join, concat, append
 
-Se [https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html]
+Se [Pandas dokumentation om merge](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html)
 
 - how/join: inner, right, left, outer
 
@@ -145,14 +147,21 @@ Slår ihop dataframes, antingen som nya rader eller nya kolumner. Nya rader, axi
 
 "Då kan man få program som är användvänliga och det vore dåligt." (Erik, kursare)
 
-
-
-
-
 ### Parse HTML -> pandas dataframe
 
 
 
+# 2021-10-26 : Intro till Lab1
+
+Dataanalys av FHM:s statistik över C-19 i Sverige. Laddade hem filerna 2021-10-26. När du studerar antal barn i Sverige, kolla först om det finns några data på <16-åringar. Det ska inte finnas några men kan ha dykt upp senare.
+
+- Jupyter notebook med Markdown-anteckningar som rapport. Spara bilderna.
+
+- En py-fil med funktioner som jag återanvänder.
+
+Uppgift 4: Egenhändigt studerande av internationella data. Se [FHM:s sida med länkar](https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/statistik-och-analyser/antal-fall-globalt/).
+
+Graferna ska vara designade så att de är enkla, pedagogiska och inte lurar folk. Inte kapa axlarna!
 
 
 #```py
