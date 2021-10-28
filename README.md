@@ -163,6 +163,98 @@ Uppgift 4: Egenhändigt studerande av internationella data. Se [FHM:s sida med l
 
 Graferna ska vara designade så att de är enkla, pedagogiska och inte lurar folk. Inte kapa axlarna!
 
+# 2021-10-28 : Gästföreläsning, KPI:er
+
+Key Perfomance Indicator: att mäta effektivitet hos nånting m.h.a. av div. faktorer - ger indikatorer. Går egentligen att använda i nästan vad som helst som är resultatbaserat, att mäta om man är på väg åt rätt håll.
+
+Exempel
+
+- Försäljningssiffror - nöjda kunder, volumer, nya kunder.
+
+- Produktion - Att rätt mängd produceras inom rätt tid.
+
+- Samhälleliga frågor - Nollvisionen, Covid-19, mäta antal döda och skadade.
+
+- Skolor - Mäta resultatet, antal examina, LiA (YH)
+
+Behöver vara något
+
+- mätbart.
+
+- faktorer som är viktiga för framgångar i organisationen.
+
+- kopplat till något mål.
+
+- begränsas gärna till 5-8 mätvärden (blir det inte risk för att man sätter upp en för enkel modell då?)
+
+- applicerbar för hela organisationen, den ska inte vara för "långt bort" och "stor" utan vara något alla relaterar till.
+
+Som man frågar får man svar. KPI:en måste designas med omsorg för annars kan mätningen ge konstiga resultat som inte funkar.
+
+Används för att
+
+- identifiera trender - ger signaler på om något är fel.
+
+- göra beslut, se hur man ska prioritera verksamheten.
+
+Skapas från att
+
+- kolla på övergripande mål.
+
+- hur ser processen ut?
+
+Man vill få till en både meningsfull och mätbar KPI. Så har man också ett "mätdatum" som behöver sättas på ett vettigt sätt (t.ex. så att det inte skapar onödig stress).
+
+Möjlighet är att ha alternativ för att inte fastna i en för enkel och stringent modell som gör arbetsflödet oanpassningsbart och t.ex. stressigt. 
+
+Allt detta behöver någon slags löpande datainsamling och arbete för att analysera data och ge resultat. 
+
+## Nackdelar
+
+- Ensidigt synsätt - stirrar sig blind på siffrorna, externa faktorer missar. T.ex.. man måste inte uppnå "målen" bara för målets skull.
+
+- Data behöver mätas löpande eller frekvent. Läggs för mycket tid på att mäta och prata mätningar.
+
+- Väldigt mycket risk för tillbakablick, stirrar sig blind bakåt och inte hanterar framtiden.
+
+## KPI:er och AI
+
+En löpande insamling data och dess analys kan hanteras automatiskt med AI.
+
+Mätningar kan handla om
+
+- Noggrannhet och absoluta fel.
+
+- Antal frågor, problem, requests, och antal behandlade sådana.
+
+- Meta: mäta volymer av analyserade mätdata...
+
+Tillgång till data i allmänhet är extremt mycket större idag. Mer data än vad man kan hantera. Här kommer då AI in för att hantera och analysera och sålla bland alla data. Vad är faktiskt användbart? Kombinera det med KPI:er så kan man automatisera själva KPI-formulerandet. Andra exempel är t.ex. inom prissättning, att samla data på vad andra har för prissättningar, hur ska det påverka ens egna prissättning? (Låter farligt...)
+
+## Övning: KPI:er och C19-vaccin
+
+Möjliga KPI:er
+
+- Antal givna doser, 1 och 2.
+
+- Jämför med tidigare, tidsserier.
+
+- Andel vaccinerade, i landet, i regioner, per åldergrupp.
+
+- Hur många med C19 på sjukhus, hur utvecklar det sig, hur stor andel är ovaccinerade.
+
+- Prognos framåt, kapacitet på sjukhus och antal vaccin.
+
+- Typer av vaccin, hur många ges av vardera, allmänna resultat där.
+
+## Frågor
+
+Hur hantera chefer som stirrar sig blinda på KPI:er som är dåligt formulerade och missar andra viktiga detaljer? Bara för att det inte är mätbart betyder ju itne att det är oviktigt.
+
+Svar: visa nyfikenhet istället för kritik i början. Fråga och undra vad man får ut av div. KPI:er och fråga om hur de hanterar andra faktorer.
+
+
+
 
 #```py
 #```
