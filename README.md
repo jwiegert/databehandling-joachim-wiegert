@@ -253,6 +253,25 @@ Hur hantera chefer som stirrar sig blinda på KPI:er som är dåligt formulerade
 
 Svar: visa nyfikenhet istället för kritik i början. Fråga och undra vad man får ut av div. KPI:er och fråga om hur de hanterar andra faktorer.
 
+# 2021-11-01 : Lecture04
+
+## Git bash kommadon
+
+> git status
+
+Kollar info i den katalogen som är ditt git-repo. Listar om det finns något commit'at men icke-push'at.
+
+> git pull
+
+Hämtar hem allt som blivit push'at till repo'n sen sist. 
+
+## Datetime
+
+> from datetime import datetime
+
+hämtar en klass som hanterar datum etc.
+
+
 
 
 
