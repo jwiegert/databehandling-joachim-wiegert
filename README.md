@@ -265,11 +265,38 @@ Kollar info i den katalogen som är ditt git-repo. Listar om det finns något co
 
 Hämtar hem allt som blivit push'at till repo'n sen sist. 
 
-## Datetime
+Här finns en massa kommandon som vi innan bara kört grafiskt i VSC. Som commit, push, etc.
+
+## Datetime : lect04_dates
 
 > from datetime import datetime
 
 hämtar en klass som hanterar datum etc.
+
+Exempel:
+
+> datetime.now()
+
+Ger datum och tid till nu.
+
+> .strftime()
+
+gör om object till sträng'ad tid
+
+> .strptime()
+
+gör om sträng'ad 
+
+
+## Stock data och gömda filer
+
+I .gitignore finns en lista över filnamn och filändelser som git ignorerar när man pushar filer till github. T.ex. kan man har en textfil med namnet
+
+> .env
+
+Det är en environmentfil där man kan lägga koder, lösenord, nycklar som man behöver men inte vill sprida på.
+
+I .gitignore man kan också lägga in vad som helst som man nu inte vill dela på.
 
 
 
