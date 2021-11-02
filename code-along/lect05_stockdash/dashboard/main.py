@@ -1,10 +1,17 @@
+# Dashboard packages
 from dash.dependencies import Input, Output
-import pandas as pd
 from dash import dcc, html
 import dash
-from load_data import StockDataLocal
-from dash.dependencies import Output, Input
+
+# Dataframe and plot
+import pandas as pd
 import plotly_express as px
+
+# Custom modules
+from load_data import StockDataLocal
+from time_filtering import filter_time
+
+
 
 # Time to create our dashboard!
 
@@ -70,6 +77,12 @@ def update_graph(stock, time_index):
 
     # intraday or daily depends on time index input (value)
     dff = dff_intraday if time_index <= 2 else dff_daily
+
+    # Define a dictionary with days, maps 0-6 to number of days, max is not necessary
+    days = {i: day for i,day in enumerate([1,7,30,90,365,5*365])}
+
+    # This gives max instead
+    dff = dff if time_index == 6 else filter_time(dff, days[time_index])
 
     # Plot figure using dff-data
     fig = px.line(dff, x=dff.index, y="close")
