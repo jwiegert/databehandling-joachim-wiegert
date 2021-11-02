@@ -300,7 +300,14 @@ I .gitignore man kan också lägga in vad som helst som man nu inte vill dela p�
 
 # 2021-11-02 : lect05
 
-Mer om aktier och design'a dashboard.
+Mer om aktier och design'a dashboard. Se katalogen lect05_*
+
+Vi skrev en modul, load_data som laddar in data från lokalt sparade csv-filer och sparar dem som object.
+
+Vi designade ett enkelt API som körs i webläsarn med lite text och dropdown-meny där man väljer från de aktier vi har laddat ner. Den plottar kursen med plotlyexpress.
+
+Sen la vi till en time-slider
+
 
 
 
