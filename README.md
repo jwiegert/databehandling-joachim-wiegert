@@ -306,9 +306,16 @@ Vi skrev en modul, load_data som laddar in data från lokalt sparade csv-filer o
 
 Vi designade ett enkelt API som körs i webläsarn med lite text och dropdown-meny där man väljer från de aktier vi har laddat ner. Den plottar kursen med plotlyexpress.
 
-Sen la vi till en time-slider
+Sen la vi till en time-slider som använder relativedelta:
 
+```py
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
+now = datetime.now()
+yesterday = now.date() - relativedelta(days = 10)
+print(yesterday)
+```
 
 
 #```py
