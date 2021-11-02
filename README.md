@@ -298,7 +298,9 @@ Det är en environmentfil där man kan lägga koder, lösenord, nycklar som man 
 
 I .gitignore man kan också lägga in vad som helst som man nu inte vill dela på.
 
+# 2021-11-02 : lect05
 
+Mer om aktier och design'a dashboard.
 
 
 
