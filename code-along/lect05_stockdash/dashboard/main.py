@@ -63,8 +63,9 @@ app.layout = html.Div([
 ])
 
 # Use callback decorator for extra functions
-# Input is our dropdown menu
+# Input 1 is our dropdown menu
 # Output is the graph
+# Input 2 is the time slider
 @app.callback(
     Output("stock-graph", "figure"),
     Input("stock-picker-dropdown", "value"),
