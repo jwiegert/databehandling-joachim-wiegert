@@ -85,7 +85,7 @@ def update_graph(stock, time_index):
     dff = dff if time_index == 6 else filter_time(dff, days[time_index])
 
     # Plot figure using dff-data
-    fig = px.line(dff, x=dff.index, y="close")
+    fig = px.line(dff, x=dff.index, y="close", labels={"close":"Stock value (us-$)"})
 
     return fig # fig object goes into output property, ie figure property
 
