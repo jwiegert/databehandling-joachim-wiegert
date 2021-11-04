@@ -320,7 +320,7 @@ print(yesterday)
 
 Anonymiseringar och genomgång av grupparbete.
 
-### Hash function: S -h-> h(S)
+## Hash function: S -h-> h(S)
 
 Vi har ett "meddelande", S, skickas till en sida, ger h(S) = hash value. S -h-> h(S)
 
@@ -339,6 +339,21 @@ Har vissa krav:
 För att göra brute'forceing snabbare så brukar hackers börja med vanliga ord och vanliga lösenord. Därför är det faktiskt nytta att använda ovanliga ord i sina koder, men också bra att ha lååånga lösenord för det blir extra långsamt att bruteforce'a.
 
 Fråga: Många ber om speciella tecken i sina lösenord. Det är väl för att ge ovanliga ord som är svåra att gissa, men om alla har specialtecken i sina lösenord blir de ju inte svåra att gissa på längre?
+
+## Projekt
+
+Görs i en gemensam github-repo
+
+- New repository
+
+- Settings i repo'n -> manage access -> logga in -> add people -> skriv deras github-email.
+
+Så 4st uppgifter plus uppvärmning. Lägg ihop allt i en dashboard som vi sen använder i presentationen, 5-15min per grupp. Sen ska vi också göra en video med [OBS](https://obsproject.com/sv) individuellt där jag går igenom vad koderna gör.
+
+För VG krävs välstruktuerad kod m.h.a. funktioner eller klasser. Effektiv enkel kod och användarvänlig dashboard.
+
+
+
 
 
 #```py
