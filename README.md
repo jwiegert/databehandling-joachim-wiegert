@@ -316,6 +316,29 @@ now = datetime.now()
 yesterday = now.date() - relativedelta(days = 10)
 print(yesterday)
 ```
+# 2021-11-04 : lect06
+
+Anonymiseringar och genomgång av grupparbete.
+
+### Hash function: S -h-> h(S)
+
+Vi har ett "meddelande", S, skickas till en sida, ger h(S) = hash value. S -h-> h(S)
+
+Har vissa krav:
+
+- Deterministiskt, samma meddelande ska ge samma hast value h(S)
+
+- Snabbt att beräkna
+
+- S -h-> h(S) ska vara enkelriktat. h(S) -h-> ger inte tillbaka S. (Hackers löser det genom brute force istället.)
+
+- Två olika strängar, S1 =/= S2, ger olika hash values, h(S1) =/= h(S2).
+
+- S + epsilon -> h(S+epsilon) - h(S) >> 1. Alltså, S plus en liiten skillnad (epsilon) ger extremt olika hash values.
+
+För att göra brute'forceing snabbare så brukar hackers börja med vanliga ord och vanliga lösenord. Därför är det faktiskt nytta att använda ovanliga ord i sina koder, men också bra att ha lååånga lösenord för det blir extra långsamt att bruteforce'a.
+
+Fråga: Många ber om speciella tecken i sina lösenord. Det är väl för att ge ovanliga ord som är svåra att gissa, men om alla har specialtecken i sina lösenord blir de ju inte svåra att gissa på längre?
 
 
 #```py

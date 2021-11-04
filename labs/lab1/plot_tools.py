@@ -1,6 +1,6 @@
 import pandas as pd
 
-import plotly
+#import plotly
 import plotly_express as px
 from plotly.subplots import make_subplots
 
@@ -13,6 +13,7 @@ def sns_line(data, xparam, yparam, xlabel, ylabel, ax):
     """
     Set settings for custom seaborn lineplots and plots
     Used for loops of subplots
+    (Documentation is non-existent here, I know, didn't have the time)
     """
     ax.set(ylabel=ylabel, xlabel=xlabel)
     ax.set_xticks(list(range(0,len(data[xparam]),20)))
