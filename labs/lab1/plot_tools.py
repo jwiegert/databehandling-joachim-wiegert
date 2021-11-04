@@ -1,4 +1,5 @@
 import pandas as pd
+from pandas.core.frame import DataFrame
 
 #import plotly
 import plotly_express as px
@@ -55,7 +56,7 @@ def pxplot_twoline(dataframe1, dataframe2, ylabel1, ylabel2):
     return subfig
 
 
-def weekly_averages(df, reversed=False):
+def weekly_totals(df, reversed=False):
     """
     Take weekly totals of time series data frames with daily data
     Indeces must be dates in datetime format
@@ -83,4 +84,17 @@ def weekly_averages(df, reversed=False):
     # Save to new dataframe
     df_week = pd.DataFrame(df_week).transpose()
     
+    return df_week
+
+def weekly_averages(df: DataFrame, column: str, datecolumn: str) -> DataFrame:
+    """Takes average daily value on a weekly bases for time series data frames"""
+
+    # Create empty dateframe
+    df_week = pd.DataFrame()
+
+    for value in df[column].unique():
+        df2 = df[df[column] == value].resample(
+            pd.Timedelta(value=7,unit="days"), on=datecolumn, axis="rows").mean()
+        df_week = pd.concat([df_week,df2], axis="rows")
+
     return df_week
