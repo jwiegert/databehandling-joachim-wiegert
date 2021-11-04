@@ -7,6 +7,8 @@ from plotly.subplots import make_subplots
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 # Seaborn line plot function
 def sns_line(data, xparam, yparam, xlabel, ylabel, ax):
@@ -51,3 +53,34 @@ def pxplot_twoline(dataframe1, dataframe2, ylabel1, ylabel2):
 
     # Return figure object
     return subfig
+
+
+def weekly_averages(df, reversed=False):
+    """
+    Take weekly totals of time series data frames with daily data
+    Indeces must be dates in datetime format
+    reversed=True if time series first row is latest date
+    """
+
+    days = 7
+    Nweeks = int(df.index.size / days)
+    df_week = {}
+
+    for n in range(Nweeks):
+        # Extract times
+        starttime = df.index[n*days].date()
+        year = df.index[n*days].year
+        week = df.index[n*days].week
+
+        # Add to dictionary
+        if reversed == True:
+            df_week[f"{year} v.{week}"] = \
+                df.loc[starttime:starttime - relativedelta(days=days)].sum()
+        else:
+            df_week[f"{year} v.{week}"] = \
+                df.loc[starttime:starttime + relativedelta(days=days)].sum()
+
+    # Save to new dataframe
+    df_week = pd.DataFrame(df_week).transpose()
+    
+    return df_week
