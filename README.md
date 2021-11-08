@@ -316,6 +316,7 @@ now = datetime.now()
 yesterday = now.date() - relativedelta(days = 10)
 print(yesterday)
 ```
+
 # 2021-11-04 : lect06
 
 Anonymiseringar och genomgång av grupparbete.
@@ -351,6 +352,141 @@ Görs i en gemensam github-repo
 Så 4st uppgifter plus uppvärmning. Lägg ihop allt i en dashboard som vi sen använder i presentationen, 5-15min per grupp. Sen ska vi också göra en video med [OBS](https://obsproject.com/sv) individuellt där jag går igenom vad koderna gör.
 
 För VG krävs välstruktuerad kod m.h.a. funktioner eller klasser. Effektiv enkel kod och användarvänlig dashboard.
+
+
+# 2021-11-08 :  GDPR
+
+### Myndigheter
+
+- Sverige: 
+
+Riksdagsutskott, departement, integritetesskyddsmyndighet (fd datainspektionen, bytte namn i januari 2021).
+
+- EU: 
+
+EU council (EU-kommissionen), Coreper - committee of the parmanent representatives of the goverments of the member states of the european union.
+
+EDPB: European data protection board - europeiska dataskyddsstyrelsen.
+
+
+## Lite begrepp
+
+- Data controller: Ingen aktör som faller under GDPR-lagstiftningen får vara anonyma. De måste ha någon person utåt, en "controller". Verksamheter, offentliga och privata företag, som hanterar personuppgifter är de som faller under GDPR.
+
+- Profiling: Kallas det när man automatiskt går igenom och analyserar personuppgifter.
+
+
+## Syfte
+
+Alla aktörer måste hantera en del data.
+
+- Legal plikt, t.ex. skickar skatteuppgifter till myndigheter.
+
+- Förmåner till anställda, t.ex. låna företagsbil.
+
+- Kunduppgifter eller liknande, t.ex. inför kampanjer och rea måste kunder som skriver upp sig få veta vilka data som behövs för att de ska kunna vara med på kampanjen.
+
+All datainsamling handlar alltså inte om att aktören måste göra det p.g.a. lagstiftning. Då kan det vara så att de har legitima skäl till att samla in data. GDPR innebär då att de individer som samlas in data om måste få veta vad och varför som samlas in om dem, och såklart att man har möjligheten att inte delta. Individens rättigheter väger tungt, som att man får hämta ut de data som samlats in om en och har rätt att flytta dem från en annan aktör till en annan. Till exempel från en telefonoperatör till en annan.
+
+Tvärtom däremot, att aktörer skickar persondata mellan olika aktörer får INTE hända. Inte utan personernas godkännande.
+
+
+### Minimering av data
+
+Aktörer är då också skyldiga att inte samla in mer data än de faktiskt behöva och syftet som gör det legitimt att samla in data är aldrig för evigt. Dock så är syftestiden lätt att sätta till något långt. Exempel, garanti på produkter, eller att spara data så länge någon är en kund.
+
+I vissa specialfall finns det lagstiftning som går över GDPR. Exempel är att skolor kan spara på betygsuppgifter om elever som inte går på skolan längre, eller vaccinationsregistret i Sverige, eller andra journaler inom sjukvården.
+
+Olika sätt finns för att avpersonifiera persondata. Ta som exempel födelsedatum, det exakta datumet, eller exakta året behövs sällan. Det räcker att samla in till exempel 5-10 årsspann av födelsedatum på personer när man behöver studera åldersmässiga effekter inom något.
+
+Exempel till data science, här är det kanske svårt att legitimera datainsamlingen med att man har krav på dig att samla dem. Här är det viktigt att minimera insamling av onödiga data, data som är svårt att visa hur de är legitima. Som exempel, göra data inexaktare för att ta bort personifieringen, ta bort det som faktiskt inte behövs.
+
+- Ta bort personlig data - går det? : Pseudoanonymisering
+
+Om inte, går det att ta bort direkt personifieringen i datan? Namn, adress, IDnummer, födelsedatum, bilder, intern kommunikation (E-mail, jobbchat etc). Igen, födelsedatum går att ändra till t.ex. "född mellan 1980 och 1989". Alternativa lagar gäller i vissa fall, t.ex. patientdatalagen gäller hälsodata.
+
+- Aktuella data - Data åldras
+
+Finns det anledning till att spara t.ex. någons adress i 60 år för pensionssyfte? Nej, och dessutom lär inte adressen vara korrekt om ett par decennier i allafall.
+
+
+### Dataprofilering
+
+Exempel, företag hämtar ut inkomstnivåer beroende på postadresser. Sedan anpassar de t.ex. nivåer på rea till postadresser eller olika premier på bilförsäkringar beroende på var man bor.
+
+I vissa fall faller det inte in i GDPR utan snarare inom lagstiftning kring förtryck (vad heter det?).
+
+### DPA : Data processing agreements
+
+- Alla företag som sparar data är data controllers.
+
+- Data controllers är anvsariga att hantera data inom GDPR.
+
+- Leverantörer som hanterar data blir själva data controllers.
+
+- Alla kontrakt med nya samarbetspartners innehåller DPA'er.
+
+- Företag bör kunna se till att deras leverantörer hanterar deta på korrekta vis.
+
+- När ett företag byter leverantör måste den gamla leverantören kunna lämna över alla data och ta bort dem från sina egna förvaringar.
+
+Exempel, molntjänster. När ett litet företag nyttjar t.ex. OneDrive för sina data så blir Microsoft en leverantör och då får företaget acceptera Microsofts DPA. Kan vara värt att se till att ens servrar - ens molntjänstleverantör - faktiskt finns inom EU i sådana fall.
+
+
+## Kryptering vs anonymisering
+
+Helt olika syfte bakom dessa två. Krypterade data går fortfarande att identifiera personer. Anonymisering är att faktiskt ta bort data och göra den omöjlig att återskapa från befintliga data. Båda har delar inom GDPR. Kryptering är till för att skydda persondata från yttre (otillåtna) aktörer.
+
+- (Artikel 32) Data controller har ansvar att ta till tillräckligt åtgärder för att minimera identifiering såsom pseudoanonymisering och kryptering.
+
+
+### Koppla olika dataset till personer
+
+- Linkability
+
+Att kunna koppla samman minst 2 data om samma individ, eller samma grupp människor etc. En yttre aktör, t.ex. en hacker ska inte kunna koppla samman två skilda uppsättningar data till samma individer. 
+
+- Inference
+
+Möjligheten att utröna med hög sannolikhet värden hos olika attribut från data inom andra attribut. Handlar inte om att ha tillgång till data, utan nyttja en delmängd av data som finns tillgängliga för att ta reda på något annat som man inte ska veta. 
+
+I båda fall, om det går att identifiera personer har inte anonymiseringen och krypteringen gjorts tillräckligt bra. Bristen och ansvaret ligger då hos aktören som inte har hanterat sina insamlade data tillräckligt korrekt.
+
+- Exempel: Lönedata
+
+Dataset med löner för avdelning X. Dessa innehåller också kön och födelsedatum. Det går att se att det finns t.ex. två kvinnor på X. Kolla adressboken hos företaget, vilka personer har kvinnliga namn? Det går också att söka efter födelsedatum externt och så identifiera vilka löner dessa kvinnor har.
+
+- Smart querying
+
+Ett sätt att motverka linkability and inference är att hålla koll på vilka frågor som ställs inom databaserna. (Simulera data-mining?) Kolla vad för resultat som dyker upp. Försöker någon extern nyttja databasen för att få ut individdata?
+
+
+### Internationella avtal
+
+Samarbeten med aktörer utanför EU kräver att antingen har landet lagstiftning motsvarande GDPR eller att det går att avtala om dataskydd. Finns domslut inom Europeiska dataskyddsdomstolen. Uppmaningen är att aktörer ser till att ha koll på hur deras data överförs och hanteras av deras leverantörer. "Know your transfers".
+
+- Länder med adekvat skyddsnivå : från integritetsskyddsmyndigheten
+
+Länder som har tillräckliga dataskydd utanför EU:
+
+Andorra, Argentina, Bailiwick of Guernsey, Färööarna, Isle of Man, Israel, Japan, Jersey, Nya Zeeland, Schweiz, Storbritannien, Uruguay.
+
+Dock inte USA, Australien, Kina, Ryssland, etc.
+
+Norge är med i GDPR via EEA.
+
+
+## Rekommendationer
+
+- Första-koll, är datan tillräckligt okänsliga?
+
+- Var öppen och tydlig med varför data ska samlas in. Gör det inte bara för att du kan.
+
+- Nyttja jurister på din arbetsplats, kolla vad du kan och inte kan göra. Se till att det finns DPA'er.
+
+- Juristerna kan också se över att datan som sparas är tillräcklgit anonymiserade och krypterade. De vet också när och hur man ska kontakta personer som har data sparade.
+
+- Om det inte finns jurister, nyttja myndigheter och andra nätverk. De ska inte bara se till att lagen följs utan hjälpa aktörer att följa lagen. Svenskt näringsliv, handelskammaren, etc.
 
 
 
