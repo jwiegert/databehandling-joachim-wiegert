@@ -495,7 +495,7 @@ Vad ska man tänka på när man gör en dashboard? Bra att ha en plan från bör
 
 > Ja den är ful. Det spelar inte så stor roll här.
 
-
+Vanligtvis designar man först alla interaktiva saker. Vilka saker vill vi ha på dashboarden, vilka knappar, menyer, barer, figurer ska vi ha? Sedan designar vi om den så att den ska se snygg ut.
 
 
 
