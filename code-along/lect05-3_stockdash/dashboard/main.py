@@ -2,6 +2,7 @@
 from dash.dependencies import Input, Output
 from dash import dcc, html
 import dash
+import dash_bootstrap_components as dbc
 
 # Dataframe and plot
 import pandas as pd
@@ -17,6 +18,9 @@ from time_filtering import filter_time
 
 # Create an object from our load data class, ie load local data
 stock_data_object = StockDataLocal()
+
+
+# Interactive stuff settings
 
 # Drop down menu settings
 # A list of companies for a dropdown menu (in dcc.Dropdown)
@@ -38,15 +42,21 @@ df_dict = {symbol: stock_data_object.stock_dataframe(symbol)
 ohlc_options = [{"label": option.capitalize(), "value": option} 
                 for option in ["open", "high", "low", "close"]]
 
-
 # Settings for time slider, slider marks must be a dict
 # value=2 sets default value, which here is 1month
 slider_marks = {i: mark for i,mark in enumerate(
     ["1 day", "1 week", "1 month", "3 months", "1 year", "5 years", "Max"]
 )}
 
+
+# Dash board settings
+stylesheets = [dbc.themes.MATERIA]
+
 # Create a dash object called app
-app = dash.Dash(__name__) # run __name__ to get __main__
+app = dash.Dash(__name__, external_stylesheets=stylesheets,
+    meta_tags=[dict(name="viewport", content="width=device-width, initial-scale=1.0")]
+)
+
 
 # Define the layout for our "app"
 # html.H1 = header 1, main title
@@ -56,41 +66,82 @@ app = dash.Dash(__name__) # run __name__ to get __main__
 # its default value. Options is a list of what you can chose.
 # So value='' gives the default value for each dcc.
 # The objects in app.layout ends up on the page in the order we have them written here
-app.layout = html.Div([
+app.layout = dbc.Container([
 
-    # Title
-    html.H1("Stocks viewer"),
+    # dbc-cards are like boxes in the page
+    # with classname we can change margins (mt: margintop, m:margin all around), 
+    # and style (text-primary etc)
+    # lg and xl is to change length and size of boxes
 
-    # Dropdown meny with title (this is "children")
-    # The first object is always the child of this dash
-    html.P("Choose a stock"),
-    dcc.Dropdown(id='stock-picker-dropdown', className='',
-        options=stock_options_dropdown,
-        value='AAPL'
-    ),
+    # Title box
+    dbc.Card([
+        dbc.CardBody(html.H1("Stocks viewer", 
+            className='text-primary m-3')
+        )
+    ], className='mt-3'),
 
-    # Interactive text below dropdown menu
-    html.P(id = "highest-value"),
-    html.P(id = "lowest-value"),
+    # Different rows and columns for the page
+    dbc.Row([
+        dbc.Col(
+            html.P("Choose a stock"), 
+            className='mt-1',
+            xl={'size':1, 'offset':2}
+        ),
+        dbc.Col(
+            dcc.Dropdown(
+                id='stock-picker-dropdown', className='',
+                options=stock_options_dropdown,
+                value='AAPL'
+            ),
+            lg='4', xl='3'
+        ),
+        dbc.Col(
+            dbc.Card(
+                dcc.RadioItems(id='ohlc-radio', className='',
+                options=ohlc_options,
+                value='close')
+            ),
+            lg='4', xl='3'
+        )
+    ], className='mt-4'),
+
+    dbc.Row([
+        dbc.Col([
+
+            dcc.Graph(
+                id='stock-graph', className=''
+            ),
     
-    dcc.RadioItems(id='ohlc-radio', className='',
-        options=ohlc_options,
-        value='close'
-    ),
+            dcc.Slider(
+                id='time-slider', className='',
+                min=0, max=6,
+                step=None,
+                value=2,
+                marks=slider_marks
+            )], 
+            lg={"size":"6", "offset":1}, xl='6'
+        ),
+        # Interactive text below dropdown menu
+        # we use header2 (because of order), and change font size under classname
+        # to h5
+        # text-dange/success choses colour
+        dbc.Col([
+            dbc.Card([
+                html.H2("Highest value", className='h5 mt-3 mx-3'),
+                html.P(id = "highest-value", className='mx-3 h1 text-success')
+            ], className='mt-5 w-50'),
+            dbc.Card([
+                html.H2("Lowest value", className='h5 mt-3 mx-3'),
+                html.P(id = "lowest-value", className='mx-3 h1 text-danger'),
+            ], className='w-50')
+        ])
+    ]),
 
-    dcc.Graph(id='stock-graph', className=''),
-    
-    dcc.Slider(id='time-slider', className='',
-        min=0, max=6,
-        step=None,
-        value=2,
-        marks=slider_marks
-    ),
 
     # Stores an intermediate value on client's browser for sharing between callbacks
     # Needs a json object, see filter_df() below
     dcc.Store(id='filtered-df')
-])
+], fluid=True)
 
 # Use callback decorators for extra functions
 
@@ -158,8 +209,8 @@ def highest_lowest_value(json_df, ohlc):
 
     dff = pd.read_json(json_df)
 
-    highest_value = f"High: {dff[ohlc].max():.1f} $"
-    lowest_value = f"Low: {dff[ohlc].min():.1f} $"
+    highest_value = f"{dff[ohlc].max():.1f} $"
+    lowest_value = f"{dff[ohlc].min():.1f} $"
     
     return highest_value, lowest_value
 
