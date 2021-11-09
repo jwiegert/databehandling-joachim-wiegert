@@ -22,7 +22,7 @@
 
 - installera paketen där i
 
-> pipenv install numpy pandas seaborn matplotlib openpyxl ipykernel
+> pipenv install numpy pandas seaborn matplotlib openpyxl ipykernel plotly plotly-express
 
  - numpy: vanliga numeriska paketet
 
@@ -487,6 +487,18 @@ Norge är med i GDPR via EEA.
 - Juristerna kan också se över att datan som sparas är tillräcklgit anonymiserade och krypterade. De vet också när och hur man ska kontakta personer som har data sparade.
 
 - Om det inte finns jurister, nyttja myndigheter och andra nätverk. De ska inte bara se till att lagen följs utan hjälpa aktörer att följa lagen. Svenskt näringsliv, handelskammaren, etc.
+
+
+# 2021-11-09 : lect05-2 : Fortsättning på stock-dashboard
+
+Vad ska man tänka på när man gör en dashboard? Bra att ha en plan från början. En grundläggande design. UX-studenterna använder sig av [figma.com](figma.com). Men det går också bra med t.ex. paintbrush eller annat enkelt ritprogram.
+
+> Ja den är ful. Det spelar inte så stor roll här.
+
+
+
+
+
 
 
 
