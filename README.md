@@ -505,6 +505,36 @@ För att göra stil och annat på ens dashboard. Går att välja en massa olika 
 
 [bootstrap styles](https://hackerthemes.com/bootstrap-cheatsheet/)
 
+Annars, se lect5-2 och lect5-3
+
+# 2021-11-11 : lect07
+
+Exempel, inte ovanligt att skriva
+
+```py
+mask = (x > 0.5) & (y < 0.5)
+
+df = df[df[mask]]
+
+# Intermediate variables in memory
+
+tmp1 = (x > 0.5)
+tmp2 = (y < 0.5)
+```
+
+I pandas kan man använda pd.eval(""), gör elementvis med numexpr, bra för compund expressions. Se lect07 där vi testar olika användningsområden med pd.eval().
+
+### Stresstester
+
+Använda %timeit för att mäta hur lång tid saker tar. Då loopar den över vad man vill göra och tar medelvärde över hur lång tid det tar. Antal loopar beror på hur lång tid varje loop tar.
+Mycket bättre än time.
+
+
+
+
+
+
+
 
 
 
