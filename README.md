@@ -527,7 +527,33 @@ I pandas kan man använda pd.eval(""), gör elementvis med numexpr, bra för com
 ### Stresstester
 
 Använda %timeit för att mäta hur lång tid saker tar. Då loopar den över vad man vill göra och tar medelvärde över hur lång tid det tar. Antal loopar beror på hur lång tid varje loop tar.
-Mycket bättre än time.
+
+Mycket bättre än time på att ge bra uppskattningar.
+
+## Optimeringar
+
+[Dokuementation](https://pandas.pydata.org/pandas-docs/stable/user_guide/enhancingperf.html)
+
+Arbetsmetod:
+
+- Börja skriv som vanligt i C.
+
+- Kolla upp vad det är som tar tid i koden.
+
+- Börja optimera den delen, t.ex. med kompilering med Numba eller med Cython.
+
+### Cython
+
+För ytterligare optimering, installera Cython. Det finns exempel i länken ovan. Ett exempel är att man bara lägger till raden innan ens funktioner:
+
+> %%cython
+
+så kan den halvera tiden som tar.
+
+### Numba
+
+Ett verktyg för att kompilera pythonkoden i förväg. Då skriver man vanlig pythonkod, så det är snällare. Men vill man ha mer optimering så kör man Cython, men för mest optimering kör man C rakt av.
+
 
 
 
