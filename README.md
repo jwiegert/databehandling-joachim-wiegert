@@ -1,10 +1,21 @@
 
 # 2021-10-11
 
-- Kursen börjar 2021-10-18.
-- Arbetsförmedlingen kommer, filmar och intervjuar några.
+Inför databehandling.
+
+Denna kurs behandlar datahantering med Python, olika metoder, paket, bibliotek och allmänna tillvägagångssätt för att hitta, hämta, bearbeta, hantera, och presentera samt visualisera data. Det sistnämnda hanterar både enklare plots, div. plotverktyg men också att designa och lansera interaktiva dashboard för att presentera mer data på koncisa sätt.
+
+Paket:
+
+- För datahantering: numpy, pandas, html5lib.
+
+- För plotning: matplotlib, seaborn, plotly-express.
+
+- För dashboard: dash, dash-bootstrap-components, bottleneck.
 
 # 2021-10-18 : lect00
+
+[Föreläsningskod](https://github.com/jwiegert/databehandling-joachim-wiegert/blob/main/code-along/lect00_pandas_basics.ipynb)
 
 ### Setup och påminnelser
 
@@ -66,6 +77,8 @@ Inte en del av pandas. Ett praktiskt verktyg för att snabbt plotta data från d
 
 # 2021-10-19 : lect01
 
+[Föreläsningskod](https://github.com/jwiegert/databehandling-joachim-wiegert/blob/main/code-along/lect01_missingaggregation.ipynb)
+
 ### Saknade data och störande felaktiga data
 
 "Shit in gives shit out"
@@ -106,6 +119,10 @@ Byta ut NaN mot annan statistik, går att nyttja en massa inbyggda verktyg.
 
 # 2021-10-21 : lect02
 
+[Gap minder-animering](https://github.com/jwiegert/databehandling-joachim-wiegert/blob/main/code-along/lect02_gapminderanimation.py)
+
+[Föreläsningskod](https://github.com/jwiegert/databehandling-joachim-wiegert/blob/main/code-along/lect02_plotlyexpress.ipynb)
+
 ### Boktips
 
 - Python for Data Analysis - Wes McKinney
@@ -123,6 +140,8 @@ Gör om ex00 och ex01 men med plotly express istället. Det går rätt enkelt at
 FYI man kan inte göra subplots med plotly-express. För det får man använda seaborn eller matplotlib.
 
 # 2021-10-25 : lect03
+
+[Föreläsningskod](https://github.com/jwiegert/databehandling-joachim-wiegert/blob/main/code-along/lect03_merge.ipynb)
 
 ### Slå ihop data-set: merge, join, concat, append
 
@@ -144,16 +163,27 @@ Slår ihop dataframes, antingen som nya rader eller nya kolumner. Nya rader, axi
 
 - pd.merge
 
-
-"Då kan man få program som är användvänliga och det vore dåligt." (Erik, kursare)
+"Då kan man få program som är användarvänliga och det vore dåligt." (Erik, kursare)
 
 ### Parse HTML -> pandas dataframe
 
-(TBD)
+Pandas kan känna igen tabeller och ladda hem data från html-kod, d.v.s. direkt från hemsidor. Det kräver lite handpåläggning. 
+
+```py
+tables = pd.read_html(link)
+```
+
+Ger en lista med pandas-dataframes, varje dataframe är en tabell som den detekterat på sidan. Så man får kolla varje tabell och se vilken det är man vill ha t.ex.
+
+```py
+df = tables[0]
+```
 
 # 2021-10-26 : Intro till Lab1
 
-Dataanalys av FHM:s statistik över C-19 i Sverige. Laddade hem filerna 2021-10-26. När du studerar antal barn i Sverige, kolla först om det finns några data på <16-åringar. Det ska inte finnas några men kan ha dykt upp senare.
+[Föreläsningskod](https://github.com/jwiegert/databehandling-joachim-wiegert/tree/main/labs/lab1)
+
+Dataanalys av FHM:s statistik över C-19 i Sverige. Laddade hem filerna 2021-10-26. När du studerar antal barn i Sverige, kolla först om det finns några data på <16-åringar på vaccindatan. Det ska inte finnas några ännu men kan ha dykt upp senare.
 
 - Jupyter notebook med Markdown-anteckningar som rapport. Spara bilderna.
 
@@ -255,6 +285,10 @@ Svar: visa nyfikenhet istället för kritik i början. Fråga och undra vad man 
 
 # 2021-11-01 : Lecture04
 
+[Föreläsningskod: DateTime](https://github.com/jwiegert/databehandling-joachim-wiegert/blob/main/code-along/lect04_dates.ipynb)
+
+[Föreläsningskod: Stock data](https://github.com/jwiegert/databehandling-joachim-wiegert/blob/main/code-along/lect04_stocks.ipynb)
+
 ## Git bash kommadon
 
 > git status
@@ -298,7 +332,11 @@ Det är en environmentfil där man kan lägga koder, lösenord, nycklar som man 
 
 I .gitignore man kan också lägga in vad som helst som man nu inte vill dela på.
 
+![*Sparad bild från föreläsningen*](https://github.com/jwiegert/databehandling-joachim-wiegert/blob/main/code-along/lect04_stocks.png)
+
 # 2021-11-02 : lect05
+
+[Föreläsningskod](https://github.com/jwiegert/databehandling-joachim-wiegert/tree/main/code-along/lect05-1_stockdash)
 
 Mer om aktier och design'a dashboard. Se katalogen lect05_*
 
@@ -318,6 +356,8 @@ print(yesterday)
 ```
 
 # 2021-11-04 : lect06
+
+[Föreläsningskod](https://github.com/jwiegert/databehandling-joachim-wiegert/blob/main/code-along/lect06_anonymization.ipynb)
 
 Anonymiseringar och genomgång av grupparbete.
 
@@ -342,6 +382,10 @@ För att göra brute'forceing snabbare så brukar hackers börja med vanliga ord
 Fråga: Många ber om speciella tecken i sina lösenord. Det är väl för att ge ovanliga ord som är svåra att gissa, men om alla har specialtecken i sina lösenord blir de ju inte svåra att gissa på längre?
 
 ## Projekt
+
+[Projektkod: deployed code](https://github.com/jwiegert/databehandling-os-deployable)
+
+[Dashboardlänk](https://yuna-joachim-os.herokuapp.com)
 
 Görs i en gemensam github-repo
 
@@ -491,9 +535,15 @@ Norge är med i GDPR via EEA.
 
 # 2021-11-09 : lect05-2 : Fortsättning på stock-dashboard
 
+[Föreläsningskod-2](https://github.com/jwiegert/databehandling-joachim-wiegert/tree/main/code-along/lect05-2_stockdash)
+
+[Föreläsningskod-3](https://github.com/jwiegert/databehandling-joachim-wiegert/tree/main/code-along/lect05-3_stockdash)
+
+[Deploy-repo](https://github.com/jwiegert/stock-viewer-codealong)
+
 Vad ska man tänka på när man gör en dashboard? Bra att ha en plan från början. En grundläggande design. UX-studenterna använder sig av [figma.com](figma.com). Men det går också bra med t.ex. paintbrush eller annat enkelt ritprogram.
 
-> Ja den är ful. Det spelar inte så stor roll här.
+> "Ja den är ful. Det spelar inte så stor roll här."
 
 Vanligtvis designar man först alla interaktiva saker. Vilka saker vill vi ha på dashboarden, vilka knappar, menyer, barer, figurer ska vi ha? Sedan designar vi om den så att den ska se snygg ut.
 
@@ -508,6 +558,8 @@ För att göra stil och annat på ens dashboard. Går att välja en massa olika 
 Annars, se lect5-2 och lect5-3
 
 # 2021-11-11 : lect07
+
+[Föreläsningskod](https://github.com/jwiegert/databehandling-joachim-wiegert/blob/main/code-along/lect07_highperfomance.ipynb)
 
 Exempel, inte ovanligt att skriva
 
@@ -532,7 +584,7 @@ Mycket bättre än time på att ge bra uppskattningar.
 
 ## Optimeringar
 
-[Dokuementation](https://pandas.pydata.org/pandas-docs/stable/user_guide/enhancingperf.html)
+[Dokumentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/enhancingperf.html)
 
 Arbetsmetod:
 
